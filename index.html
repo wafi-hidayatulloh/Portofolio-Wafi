@@ -1,0 +1,914 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Muhammad Wafi | Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "secondary": "#505f76",
+                    "inverse-primary": "#bec6e0",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-surface": "#0d1c2d",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary-container": "#171c1f",
+                    "on-primary": "#ffffff",
+                    "outline": "#76777d",
+                    "surface-tint": "#565e74",
+                    "surface-dim": "#ccdbf2",
+                    "tertiary-fixed": "#dfe3e7",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#d4e4fa",
+                    "surface-container-high": "#dbe9ff",
+                    "on-primary-container": "#7c839b",
+                    "inverse-on-surface": "#e9f1ff",
+                    "tertiary": "#000000",
+                    "on-tertiary-fixed-variant": "#43474b",
+                    "surface-variant": "#d4e4fa",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-background": "#0d1c2d",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-surface-variant": "#45464d",
+                    "on-primary-fixed": "#131b2e",
+                    "primary-fixed": "#dae2fd",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "tertiary-fixed-dim": "#c3c7cb",
+                    "secondary-container": "#d0e1fb",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#233143",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#171c1f",
+                    "primary-container": "#131b2e",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c6c6cd",
+                    "surface-container": "#e5efff",
+                    "on-tertiary-container": "#808488",
+                    "on-secondary-container": "#54647a",
+                    "surface-container-low": "#eef4ff",
+                    "primary": "#000000",
+                    "background": "#f8f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "2xl": "1rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "section-gap": "120px",
+                    "element-gap": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0d1c2d;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ambient-shadow {
+            box-shadow: 0 10px 30px -10px rgba(19, 27, 46, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #d4e4fa;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(190, 198, 224, 0.15) 0%, rgba(248, 249, 255, 0) 70%);
+        }
+
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .reveal-stagger {
+                animation: none !important;
+            }
+        }
+
+        /* Staggered Entrance for Hero */
+        .hero-reveal-1 { transition-delay: 0.1s; }
+        .hero-reveal-2 { transition-delay: 0.3s; }
+        .hero-reveal-3 { transition-delay: 0.5s; }
+        .hero-reveal-4 { transition-delay: 0.7s; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(15, 28, 45, 0.95);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.96);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+        .mobile-menu a {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .mobile-menu a:hover {
+            opacity: 0.7;
+        }
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Nav scroll effect */
+        .nav-scrolled {
+            background: rgba(248, 249, 255, 0.95) !important;
+            box-shadow: 0 1px 3px rgba(19, 27, 46, 0.08);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #eef4ff; }
+        ::-webkit-scrollbar-thumb { background: #bec6e0; border-radius: 8px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a0a8c2; }
+
+        /* Form focus */
+        .form-input:focus {
+            outline: none;
+            border-color: #505f76;
+            box-shadow: 0 0 0 3px rgba(80, 95, 118, 0.1);
+        }
+
+        /* Project card hover */
+        .project-card {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(19, 27, 46, 0.12);
+        }
+
+        /* Typing cursor */
+        .typewriter-cursor::after {
+            content: '|';
+            animation: blink 0.7s step-end infinite;
+            color: #505f76;
+            font-weight: 300;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .typewriter-text {
+            display: inline;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(13, 28, 45, 0.7);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .modal-overlay.open .modal-content {
+            transform: scale(1) translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            color: #45464d;
+        }
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 200;
+            background: #131b2e;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(120px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 14px;
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Smooth section transition on load */
+        .fade-in-section {
+            animation: fadeUp 0.8s ease forwards;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden text-justify">
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+<button class="close-btn material-symbols-outlined" id="closeMenu">close</button>
+<a href="#" onclick="closeMobileMenu()">Home</a>
+<a href="#about" onclick="closeMobileMenu()">About</a>
+<a href="#skills" onclick="closeMobileMenu()">Skills</a>
+<a href="#projects" onclick="closeMobileMenu()">Projects</a>
+<a href="#contact" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300" id="navbar">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">Muhammad Wafi</a>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-body-md text-body-md text-secondary font-semibold cursor-pointer active:scale-95 transition-transform" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#about">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#skills">Skills</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#projects">Projects</a>
+<button class="bg-primary-container text-white px-6 py-2 rounded-full font-semibold hover:bg-primary transition-all duration-300 shadow-lg active:scale-95" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+</div>
+<button class="md:hidden text-primary" id="menuToggle">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center pt-20 relative overflow-hidden hero-gradient">
+<div class="max-w-container-max mx-auto px-gutter w-full grid grid-cols-1 md:grid-cols-12 gap-element-gap items-center py-section-gap">
+<div class="md:col-span-7 z-10">
+<span class="font-label-caps text-label-caps text-secondary mb-4 block uppercase tracking-widest reveal hero-reveal-1">Tersedia untuk Freelance</span>
+<h1 class="font-headline-lg text-headline-lg md:text-5xl md:leading-tight text-primary mb-6 reveal hero-reveal-2">
+                Hi, Saya <span class="text-secondary"><span class="typewriter-text" id="typewriterName"></span><span class="typewriter-cursor"></span></span>
+</h1>
+<p class="font-headline-md text-headline-md text-secondary mb-4 leading-relaxed reveal hero-reveal-3">
+                Saya bersemangat menciptakan pengalaman yang menarik, mudah diakses, dan berpusat pada pengguna.
+            </p>
+<p class="font-body-lg text-body-lg font-medium text-on-surface mb-10 max-w-xl reveal hero-reveal-3">
+                Saya belajar Rekayasa Perangkat Lunak, menulis kode PHP/Laravel yang bersih, dan mendesain proyek visual yang keren.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 reveal hero-reveal-4">
+<a class="bg-primary text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-primary-container transition-all ambient-shadow active:scale-95" href="#projects">Lihat Proyek Saya</a>
+<a class="border-2 border-secondary text-secondary px-8 py-4 rounded-full font-semibold text-center hover:bg-secondary/10 transition-all active:scale-95" href="#contact">Hubungi Saya</a>
+</div>
+</div>
+<div class="md:col-span-5 relative flex justify-center items-center reveal hero-reveal-2" style="transition-delay: 0.4s">
+<div class="relative w-full aspect-square max-w-md">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="w-full h-full rounded-2xl overflow-hidden ambient-shadow border-8 border-white">
+<img class="w-full h-full object-cover" alt="Muhammad Wafi Hidayatulloh - Software Engineer &amp; Designer" src="WhatsApp Image 2026-07-14 at 14.06.14.jpeg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Me Section -->
+<section class="py-section-gap bg-surface-container-low" id="about">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-element-gap items-start">
+<div class="md:col-span-5 sticky top-32 reveal space-y-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6 tracking-wide font-light">Mewujudkan Ide Lewat Kode dan Estetika</h2>
+<div class="w-24 h-1 bg-secondary rounded-full"></div>
+</div>
+<div class="w-3/4 aspect-[3/4] rounded-2xl overflow-hidden ambient-shadow border-4 border-white shadow-xl mx-auto">
+<img class="w-full h-full object-cover" alt="Muhammad Wafi Hidayatulloh" src="about-photo.jpg"/>
+</div>
+</div>
+<div class="md:col-span-7">
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<p class="reveal" style="transition-delay: 0.1s">
+                        Halo! Nama saya Muhammad Wafi Hidayatulloh, seorang siswa Rekayasa Perangkat Lunak (RPL) yang memiliki ketertarikan mendalam pada dunia pengembangan web dan desain grafis.
+                    </p>
+<p class="reveal" style="transition-delay: 0.2s">
+                        Bagi saya, coding bukan hanya tentang membuat aplikasi itu berjalan, tapi juga tentang bagaimana memberikan pengalaman visual yang nyaman dan solusi yang solutif bagi pengguna.
+                    </p>
+<div class="bg-white p-8 rounded-2xl border border-outline-variant/30 ambient-shadow my-8 reveal" style="transition-delay: 0.3s">
+<p class="mb-4">
+                            Selama belajar di jurusan RPL, saya fokus mendalami pengembangan web menggunakan <strong>PHP dan Laravel</strong>, mulai dari perancangan arsitektur database (MySQL), pembuatan dokumentasi sistem (UML), hingga implementasi kode.
+                        </p>
+<p>
+                            Di sisi lain, saya juga mengasah kemampuan visual lewat branding, perancangan kemasan produk, dan desain infografis. Saya selalu bersemangat untuk mempelajari teknologi baru, memecahkan masalah lewat logika pemrograman, dan berkolaborasi dalam proyek-proyek kreatif.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Skills & Tools Section -->
+<section class="py-section-gap" id="skills">
+<div class="max-w-container-max mx-auto px-gutter text-center mb-16 reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Kemampuan &amp; Tools</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Kombinasi teknis pengembangan perangkat lunak dan kepekaan desain visual.</p>
+</div>
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="p-8 rounded-2xl bg-white border border-outline-variant/30 ambient-shadow reveal" style="transition-delay: 0.1s">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-primary-container text-white rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">code</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Development</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<span class="material-symbols-outlined text-secondary">database</span>
+<span class="font-body-md font-semibold text-primary">PHP / Laravel</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<span class="material-symbols-outlined text-secondary">storage</span>
+<span class="font-body-md font-semibold text-primary">MySQL</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<span class="material-symbols-outlined text-secondary">html</span>
+<span class="font-body-md font-semibold text-primary">HTML / CSS</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<span class="material-symbols-outlined text-secondary">account_tree</span>
+<span class="font-body-md font-semibold text-primary">UML Diagram</span>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<span class="material-symbols-outlined text-secondary">architecture</span>
+<span class="font-body-md font-semibold text-primary">AutoCAD</span>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-white border border-outline-variant/30 ambient-shadow reveal" style="transition-delay: 0.2s">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-secondary text-white rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Design &amp; Branding</h3>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">auto_awesome</span>
+<span class="font-body-md font-semibold text-primary">Logo Design</span>
+</div>
+<span class="text-on-surface-variant text-sm">Visual Identity</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">inventory_2</span>
+<span class="font-body-md font-semibold text-primary">Product Packaging</span>
+</div>
+<span class="text-on-surface-variant text-sm">3D &amp; Print</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">bar_chart</span>
+<span class="font-body-md font-semibold text-primary">Infographics Design</span>
+</div>
+<span class="text-on-surface-variant text-sm">Data Visualization</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-section-gap" id="projects">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Proyek Pilihan &amp; Studi Kasus</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Menampilkan perjalanan teknis dan kreatif dalam membangun solusi digital.</p>
+</div>
+
+<!-- Project 1: XKUL.id -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-32 reveal" style="transition-delay: 0.1s">
+<div class="lg:col-span-7 group">
+<div class="relative overflow-hidden rounded-2xl bg-white border border-outline-variant/30 ambient-shadow aspect-video flex items-center justify-center p-6">
+<img class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700" alt="XKUL.id dashboard" src="Cuplikan layar 2026-07-17 131826.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-sm text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20">System Architecture &amp; Backend</span>
+</div>
+</div>
+<div class="mt-4 flex gap-3">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Laravel</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">PHP</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">MySQL</span>
+</div>
+</div>
+<div class="lg:col-span-5 space-y-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
+                            XKUL.id
+                            <span class="text-on-surface-variant text-sm bg-surface-variant px-2 py-1 rounded">2023</span>
+</h3>
+<p class="text-secondary font-body-md text-body-md mt-1">Platform Digital Pendaftaran Ekstrakurikuler Online</p>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-secondary">engineering</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Peran</h4>
+<p class="text-on-surface-variant">Backend &amp; Sistem Analis</p>
+</div>
+</div>
+<div class="relative pl-8 border-l-2 border-primary/30 space-y-6">
+<div class="relative p-6 bg-white rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-primary">
+<div class="absolute -left-[49px] top-4 w-4 h-4 rounded-full bg-primary shadow-md"></div>
+<h5 class="text-sm font-semibold text-primary uppercase tracking-wider mb-1">Masalah</h5>
+<p class="text-on-surface-variant">Siswa sering kesulitan dengan birokrasi pendaftaran ekstrakurikuler yang masih manual dan tidak terdata dengan baik.</p>
+</div>
+<div class="relative p-6 bg-white rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-secondary">
+<div class="absolute -left-[49px] top-4 w-4 h-4 rounded-full bg-secondary shadow-md"></div>
+<h5 class="text-sm font-semibold text-secondary uppercase tracking-wider mb-1">Fitur &amp; Solusi</h5>
+<p class="text-on-surface-variant">Mengembangkan sistem berbasis web dengan Laravel. Pendaftaran online instan, manajemen kuota ekskul, dan dashboard admin untuk rekapitulasi data.</p>
+</div>
+<div class="relative p-6 bg-white rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-primary">
+<div class="absolute -left-[49px] top-4 w-4 h-4 rounded-full bg-primary shadow-md"></div>
+<h5 class="text-sm font-semibold text-primary uppercase tracking-wider mb-1">Proses Teknis</h5>
+<p class="text-on-surface-variant">Proses dimulai dari pembuatan Use Case &amp; Activity Diagram untuk memastikan alur pendaftaran digital yang mulus tanpa hambatan birokrasi.</p>
+</div>
+</div>
+</div>
+<button class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all group" onclick="openProject('xkul')">
+                        Lihat Dokumentasi Proyek
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<!-- Project 2: SPOTBOOK.id -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal" style="transition-delay: 0.2s">
+<div class="lg:col-span-5 order-2 lg:order-1 space-y-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
+                            SPOTBOOK.id
+                            <span class="text-on-surface-variant text-sm bg-surface-variant px-2 py-1 rounded">2024</span>
+</h3>
+<p class="text-secondary font-body-md text-body-md mt-1">Platform Reservasi Ruangan Sekolah &amp; Manajemen Aset</p>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-secondary">engineering</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Peran</h4>
+<p class="text-on-surface-variant">Fullstack Developer &amp; System Designer</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="p-6 bg-white rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-secondary">
+<h5 class="text-sm font-semibold text-secondary uppercase tracking-wider mb-2">Fitur</h5>
+<p class="text-on-surface-variant">Kalender interaktif real-time dengan status ketersediaan, sistem pencegahan bentrok jadwal, check-in mandiri dengan pembatalan otomatis, sistem pelaporan kerusakan fasilitas, dan dashboard analisis penggunaan ruangan.</p>
+</div>
+<div class="p-6 bg-white rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-primary">
+<h5 class="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Teknologi</h5>
+<p class="text-on-surface-variant">Dibangun dengan Laravel (PHP) untuk backend yang tangguh, FullCalendar.js untuk antarmuka jadwal interaktif, dan Tailwind CSS untuk tampilan yang modern, responsif, dan ramah pengguna.</p>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Laravel</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">PHP</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">MySQL</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">FullCalendar.js</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Tailwind CSS</span>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 group">
+<div class="relative overflow-hidden rounded-2xl bg-white border border-outline-variant/30 ambient-shadow aspect-video flex items-center justify-center p-6">
+<img class="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-1000" alt="SPOTBOOK.id platform" src="Cuplikan layar 2026-07-20 131850.png"/>
+<div class="absolute top-4 right-4 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-semibold border border-secondary/20">
+                        Web App
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><!-- Contact Section -->
+<section class="py-section-gap" id="contact">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="reveal">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Hubungi Saya</h2>
+<p class="text-on-surface-variant mb-8">Mari bangun sesuatu yang hebat bersama. Jangan ragu untuk menghubungi saya untuk pertanyaan proyek, kolaborasi, atau peluang pengembangan perangkat lunak.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<div class="reveal space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">mail</span>
+</div>
+<div>
+<p class="text-sm text-on-surface-variant">Email</p>
+<a class="font-semibold text-primary hover:text-secondary transition-colors" href="mailto:wafihidayatulloh123@gmail.com">wafihidayatulloh123@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">call</span>
+</div>
+<div>
+<p class="text-sm text-on-surface-variant">WhatsApp</p>
+<a class="font-semibold text-primary hover:text-secondary transition-colors" href="https://wa.me/6285730561377" target="_blank" rel="noopener">+62 857-3056-1377</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">camera_alt</span>
+</div>
+<div>
+<p class="text-sm text-on-surface-variant">Instagram</p>
+<a class="font-semibold text-primary hover:text-secondary transition-colors" href="https://www.instagram.com/waps.dt?igsh=eHd4bWRqc3ljNGF3" target="_blank" rel="noopener">@waps.dt</a>
+</div>
+</div>
+</div>
+<div class="reveal" style="transition-delay: 0.2s">
+<form class="bg-white p-8 rounded-2xl border border-outline-variant/30 ambient-shadow space-y-6" id="contactForm">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-primary mb-2" for="name">Nama</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low form-input transition-all" id="name" placeholder="Nama lengkap" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-primary mb-2" for="email">Email</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low form-input transition-all" id="email" placeholder="email@anda.com" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-primary mb-2" for="subject">Subjek</label>
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low form-input transition-all" id="subject" placeholder="Subjek pesan" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-primary mb-2" for="message">Pesan</label>
+<textarea class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low form-input transition-all" id="message" placeholder="Tulis pesan Anda di sini..." required="" rows="5"></textarea>
+</div>
+<button class="w-full bg-primary-container text-white py-4 rounded-xl font-bold hover:bg-primary transition-all active:scale-[0.98] shadow-lg ambient-shadow" type="submit">
+                            Kirim Pesan
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-section-gap">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-primary-container rounded-2xl p-12 md:p-20 text-center relative overflow-hidden reveal">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-3xl -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 blur-3xl -ml-32 -mb-32"></div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-6 relative z-10 reveal" style="transition-delay: 0.1s">Siap Untuk Berkolaborasi?</h2>
+<p class="text-on-primary-container font-body-lg text-body-lg mb-10 max-w-xl mx-auto relative z-10 reveal" style="transition-delay: 0.2s">Mari buat sesuatu yang luar biasa bersama. Saya terbuka untuk proyek pengembangan web maupun desain visual.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10 reveal" style="transition-delay: 0.3s">
+<a class="bg-secondary text-white px-10 py-4 rounded-full font-bold hover:bg-secondary-fixed transition-all shadow-xl active:scale-95" href="https://wa.me/6285730561377">Hubungi via WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Project Modal -->
+<div class="modal-overlay" id="projectModal">
+<div class="modal-content relative" id="modalInner">
+<button class="modal-close material-symbols-outlined" id="modalClose">close</button>
+<div id="modalBody"></div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="w-full py-element-gap bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-headline-md text-headline-md font-bold text-primary">Muhammad Wafi</span>
+<p class="font-body-md text-body-md text-on-surface-variant">&copy; 2024 Muhammad Wafi. Built with Precision &amp; Creativity.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200 opacity-80 hover:opacity-100" href="https://github.com/mwafihid" target="_blank" rel="noopener">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200 opacity-80 hover:opacity-100" href="https://wa.me/6285730561377" target="_blank" rel="noopener">WhatsApp</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200 opacity-80 hover:opacity-100" href="https://www.instagram.com/waps.dt?igsh=eHd4bWRqc3ljNGF3" target="_blank" rel="noopener">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200 opacity-80 hover:opacity-100" href="mailto:wafihidayatulloh123@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+
+<script>
+    // Intersection Observer for scroll animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Force hero animations on load
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.hero-reveal-1, .hero-reveal-2, .hero-reveal-3, .hero-reveal-4').forEach(el => {
+            el.classList.add('active');
+        });
+        // Start typewriter after hero animation
+        setTimeout(typeWriter, 800);
+    });
+
+    // Typewriter effect
+    function typeWriter() {
+        const el = document.getElementById('typewriterName');
+        const text = "Muhammad Wafi Hidayatulloh, seorang software developer";
+        let i = 0;
+        function addChar() {
+            if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                setTimeout(addChar, 80 + Math.random() * 40);
+            }
+        }
+        addChar();
+    }
+
+    // Project data & modal
+    const projects = {
+        xkul: {
+            title: 'XKUL.id',
+            tags: ['Laravel', 'PHP', 'MySQL'],
+            desc: 'Platform pendaftaran ekstrakurikuler online berbasis web dengan manajemen data siswa dan dashboard admin.',
+            detail: 'Sistem ini dikembangkan menggunakan Laravel untuk menangani pendaftaran ekstrakurikuler secara online. Fitur meliputi manajemen kuota ekskul, dashboard admin untuk rekapitulasi data, serta sistem autentikasi siswa dan guru. Proses pengembangan dimulai dari perancangan Use Case & Activity Diagram untuk memastikan alur pendaftaran yang mulus.',
+            demo: '#'
+        },
+        spotbook: {
+            title: 'SPOTBOOK.id',
+            tags: ['Laravel', 'PHP', 'MySQL'],
+            desc: 'Platform reservasi ruangan sekolah & manajemen aset dengan kalender interaktif real-time.',
+            detail: 'Sistem reservasi ruangan berbasis web untuk lingkungan sekolah. Fitur meliputi kalender interaktif real-time dengan status ketersediaan, pencegahan bentrok jadwal otomatis, check-in mandiri, pembatalan otomatis, pelaporan kerusakan fasilitas, serta dashboard analisis penggunaan ruangan. Dibangun dengan Laravel, FullCalendar.js, dan Tailwind CSS.',
+            demo: '#'
+        },
+        infografis: {
+            title: 'Infografis Edukasi',
+            tags: ['Infografis', 'Canva', 'Visual'],
+            desc: 'Perancangan infografis untuk materi pembelajaran interaktif yang menggabungkan data kompleks dengan visual yang mudah dipahami.',
+            detail: 'Proyek perancangan infografis edukatif yang menyajikan data dan informasi kompleks menjadi visual yang menarik dan mudah dipahami. Menggunakan prinsip desain informasi dan tipografi yang jelas untuk mendukung proses belajar mengajar.',
+            demo: '#'
+        }
+    };
+
+    function openProject(id) {
+        const p = projects[id];
+        if (!p) return;
+        document.getElementById('modalBody').innerHTML = `
+            <div class="flex flex-wrap gap-2 mb-4">
+                ${p.tags.map(t => `<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">${t}</span>`).join('')}
+            </div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-3">${p.title}</h3>
+            <p class="text-on-surface-variant mb-4">${p.desc}</p>
+            <hr class="border-outline-variant mb-4">
+            <p class="text-on-surface-variant leading-relaxed">${p.detail}</p>
+            <a class="inline-flex items-center gap-2 mt-6 bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary-fixed transition-all active:scale-95" href="${p.demo}" target="_blank" rel="noopener">
+                <span class="material-symbols-outlined">visibility</span> Lihat Demo
+            </a>
+        `;
+        document.getElementById('projectModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('projectModal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    document.getElementById('projectModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+            navbar.classList.add('nav-scrolled');
+        } else {
+            navbar.classList.remove('nav-scrolled');
+        }
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    function openMobileMenu() {
+        mobileMenu.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', openMobileMenu);
+    closeMenu.addEventListener('click', closeMobileMenu);
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // Hover effect on cards
+    const cards = document.querySelectorAll('.ambient-shadow');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-4px)';
+            card.style.transition = 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Contact Form Handler with Validation
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                showToast('Harap isi semua field yang wajib diisi');
+                return;
+            }
+            if (!email.includes('@') || !email.includes('.')) {
+                showToast('Harap masukkan alamat email yang valid');
+                return;
+            }
+            
+            showToast('Pesan berhasil dikirim! Terima kasih, ' + name + '. Saya akan menghubungi Anda segera.');
+            contactForm.reset();
+        });
+    }
+
+    // Toast notification system
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3500);
+    }
+
+    // Detect active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 200;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('text-secondary', 'font-semibold');
+            link.classList.add('text-on-surface-variant');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('text-secondary', 'font-semibold');
+                link.classList.remove('text-on-surface-variant');
+            }
+        });
+    });
+</script>
+</body>
+</html>
