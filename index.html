@@ -280,10 +280,48 @@
             cursor: pointer;
             color: #45464d;
         }
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 200;
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .py-section-gap { padding-top: 48px; padding-bottom: 48px; }
+            .px-gutter { padding-left: 14px; padding-right: 14px; }
+            .gap-element-gap { gap: 20px; }
+            .mb-16 { margin-bottom: 24px; }
+            .hero-gradient { padding-top: 20px; }
+            .text-display-lg-mobile { font-size: 26px !important; line-height: 34px !important; }
+            .text-headline-lg { font-size: 20px !important; line-height: 28px !important; }
+            .text-headline-md { font-size: 17px !important; line-height: 24px !important; }
+            .text-body-lg { font-size: 14px !important; line-height: 22px !important; }
+            .text-body-md { font-size: 13px !important; line-height: 20px !important; }
+            .h-20 { height: 56px; }
+            .mb-10 { margin-bottom: 20px; }
+            .mb-6 { margin-bottom: 10px; }
+            .mb-8 { margin-bottom: 14px; }
+            .p-8 { padding: 14px; }
+            .p-12, .md\:p-20 { padding: 20px; }
+            .p-6 { padding: 14px; }
+            .gap-12 { gap: 20px; }
+            .mb-32 { margin-bottom: 32px; }
+            .space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 14px; }
+            .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 10px; }
+            .rounded-2xl { border-radius: 10px; }
+            .modal-content { padding: 1.25rem; margin: 0.75rem; }
+            .px-10 { padding-left: 20px; padding-right: 20px; }
+            .py-4 { padding-top: 10px; padding-bottom: 10px; }
+            .px-8 { padding-left: 20px; padding-right: 20px; }
+            .text-sm { font-size: 12px !important; }
+            .text-xs { font-size: 11px !important; }
+            .gap-8 { gap: 12px; }
+            .gap-4 { gap: 8px; }
+            .w-12 { width: 40px; height: 40px; }
+            .h-12 { height: 40px; }
+            .w-24 { width: 48px; }
+            .border-8 { border-width: 4px; }
+            .p-10 { padding: 16px; }
+        }
+
+        /* Toast notification */
+        .toast {
             background: #131b2e;
             color: white;
             padding: 1rem 1.5rem;
