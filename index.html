@@ -403,9 +403,10 @@
             .gap-element-gap { gap: 20px; }
             .mb-16 { margin-bottom: 24px; }
             .hero-gradient { padding-top: 20px; }
-            .text-display-lg-mobile { font-size: 28px !important; line-height: 36px !important; }
+            .text-display-lg-mobile { font-size: 30px !important; line-height: 38px !important; }
             .text-headline-lg { font-size: 22px !important; line-height: 30px !important; }
             .text-headline-md { font-size: 18px !important; line-height: 26px !important; }
+            .text-display-lg { font-size: 36px !important; line-height: 44px !important; }
             .text-body-lg { font-size: 14px !important; line-height: 22px !important; }
             .text-body-md { font-size: 13px !important; line-height: 20px !important; }
             .h-20 { height: 56px; }
@@ -464,9 +465,90 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Starfield Background */
+        #starfield {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: var(--max-opacity, 0.8); }
+        }
+        .shooting-star {
+            position: absolute;
+            width: 120px;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.6), transparent);
+            animation: shoot 4s ease-in-out infinite;
+            opacity: 0;
+        }
+        .shooting-star:nth-child(1) { top: 15%; left: 60%; animation-delay: 2s; }
+        .shooting-star:nth-child(2) { top: 35%; left: 80%; animation-delay: 6s; width: 80px; }
+        .shooting-star:nth-child(3) { top: 55%; left: 40%; animation-delay: 10s; width: 100px; }
+
+        @keyframes shoot {
+            0% { transform: translateX(0) translateY(0) rotate(-35deg); opacity: 0; }
+            5% { opacity: 1; }
+            15% { transform: translateX(-200px) translateY(100px) rotate(-35deg); opacity: 1; }
+            20% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Enhanced card border */
+        .card-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .card-border:hover {
+            border-color: rgba(148, 163, 184, 0.2);
+        }
+
+        /* Tag aksen */
+        .tech-tag {
+            background: rgba(148, 163, 184, 0.08);
+            color: #e2e8f0;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+        }
+        .tech-tag:hover {
+            background: rgba(148, 163, 184, 0.15);
+            border-color: rgba(148, 163, 184, 0.3);
+        }
+
+        /* Typing rotate cursor */
+        .typing-rotate-cursor::after {
+            content: '|';
+            animation: blink 0.7s step-end infinite;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden text-justify">
+
+<!-- Starfield Background -->
+<div id="starfield"></div>
 
 <!-- Toast Notification -->
 <div class="toast" id="toast"></div>
@@ -510,9 +592,12 @@
 <div class="max-w-container-max mx-auto px-gutter w-full flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-element-gap items-center py-section-gap">
 <div class="md:col-span-7 z-10">
 <span class="font-label-caps text-label-caps text-secondary mb-4 block uppercase tracking-widest reveal hero-reveal-1">Tersedia untuk Freelance</span>
-<h1 class="font-headline-lg text-headline-lg md:text-5xl md:leading-tight text-primary mb-6 reveal hero-reveal-2">
-                Hi, Saya <span class="text-secondary"><span class="typewriter-text" id="typewriterName"></span><span class="typewriter-cursor"></span></span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2 reveal hero-reveal-2">
+                Hi, Saya <span class="gradient-text"><span class="typewriter-text" id="typewriterName"></span><span class="typewriter-cursor"></span></span>
 </h1>
+<p class="font-headline-md text-headline-md text-secondary mb-4 reveal hero-reveal-3">
+                Saya <span id="rotateText"></span><span class="typing-rotate-cursor"></span>
+</p>
 <p class="font-headline-md text-headline-md text-secondary mb-4 leading-relaxed reveal hero-reveal-3">
                 Saya bersemangat menciptakan pengalaman yang menarik, mudah diakses, dan berpusat pada pengguna.
             </p>
@@ -562,7 +647,7 @@
 <p class="reveal" style="transition-delay: 0.2s">
                         Bagi saya, coding bukan hanya tentang membuat aplikasi itu berjalan, tapi juga tentang bagaimana memberikan <span class="text-secondary font-semibold">pengalaman visual</span> yang nyaman dan <span class="text-secondary font-semibold">solusi yang solutif</span> bagi pengguna.
                     </p>
-<div class="bg-[#1e293b] p-8 rounded-2xl border border-outline-variant/30 ambient-shadow my-6 reveal card-shine" style="transition-delay: 0.3s">
+<div class="bg-[#1e293b] p-8 rounded-2xl card-border ambient-shadow my-6 reveal card-shine" style="transition-delay: 0.3s">
 <p class="mb-4">
                             Selama belajar di jurusan RPL, saya fokus mendalami pengembangan web menggunakan <strong class="text-secondary">PHP dan Laravel</strong>, mulai dari perancangan arsitektur database (<strong class="text-secondary">MySQL</strong>), pembuatan dokumentasi sistem (<strong class="text-secondary">UML</strong>), hingga implementasi kode.
                         </p>
@@ -588,7 +673,7 @@
 <p class="text-on-surface-variant max-w-2xl mx-auto">Kombinasi teknis pengembangan perangkat lunak dan kepekaan desain visual.</p>
 </div>
 <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="p-8 rounded-2xl bg-[#1e293b] border border-outline-variant/30 ambient-shadow reveal" style="transition-delay: 0.1s">
+<div class="p-8 rounded-2xl bg-[#1e293b] card-border ambient-shadow reveal" style="transition-delay: 0.1s">
 <div class="flex items-center gap-4 mb-8">
 <div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center">
 <span class="material-symbols-outlined">code</span>
@@ -618,7 +703,7 @@
 </div>
 </div>
 </div>
-<div class="p-8 rounded-2xl bg-[#1e293b] border border-outline-variant/30 ambient-shadow reveal" style="transition-delay: 0.2s">
+<div class="p-8 rounded-2xl bg-[#1e293b] card-border ambient-shadow reveal" style="transition-delay: 0.2s">
 <div class="flex items-center gap-4 mb-8">
 <div class="w-12 h-12 bg-secondary text-white rounded-xl flex items-center justify-center">
 <span class="material-symbols-outlined">palette</span>
@@ -667,16 +752,16 @@
 <!-- Project 1: XKUL.id -->
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-32 reveal" style="transition-delay: 0.1s">
 <div class="lg:col-span-7 group">
-<div class="relative overflow-hidden rounded-2xl bg-[#1e293b] border border-outline-variant/30 ambient-shadow aspect-video flex items-center justify-center p-6">
+<div class="relative overflow-hidden rounded-2xl bg-[#1e293b] card-border ambient-shadow aspect-video flex items-center justify-center p-6">
 <img class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-700" alt="XKUL.id dashboard" src="Cuplikan layar 2026-07-17 131826.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
 <span class="text-sm text-secondary bg-secondary/10 px-4 py-2 rounded-full border border-secondary/20">System Architecture &amp; Backend</span>
 </div>
 </div>
 <div class="mt-4 flex gap-3">
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Laravel</span>
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">PHP</span>
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">MySQL</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">Laravel</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">PHP</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">MySQL</span>
 </div>
 </div>
 <div class="lg:col-span-5 space-y-8">
@@ -698,17 +783,17 @@
 </div>
 </div>
 <div class="relative pl-8 border-l-2 border-primary/30 space-y-6">
-<div class="relative p-6 bg-[#1e293b] rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-primary">
+<div class="relative p-6 bg-[#1e293b] rounded-xl card-border ambient-shadow border-l-4 border-primary">
 <div class="absolute -left-[49px] top-4 w-4 h-4 rounded-full bg-primary shadow-md"></div>
 <h5 class="text-sm font-semibold text-primary uppercase tracking-wider mb-1">Masalah</h5>
 <p class="text-on-surface-variant">Siswa sering kesulitan dengan birokrasi pendaftaran ekstrakurikuler yang masih manual dan tidak terdata dengan baik.</p>
 </div>
-<div class="relative p-6 bg-[#1e293b] rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-secondary">
+<div class="relative p-6 bg-[#1e293b] rounded-xl card-border ambient-shadow border-l-4 border-secondary">
 <div class="absolute -left-[49px] top-4 w-4 h-4 rounded-full bg-secondary shadow-md"></div>
 <h5 class="text-sm font-semibold text-secondary uppercase tracking-wider mb-1">Fitur &amp; Solusi</h5>
 <p class="text-on-surface-variant">Mengembangkan sistem berbasis web dengan Laravel. Pendaftaran online instan, manajemen kuota ekskul, dan dashboard admin untuk rekapitulasi data.</p>
 </div>
-<div class="relative p-6 bg-[#1e293b] rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-primary">
+<div class="relative p-6 bg-[#1e293b] rounded-xl card-border ambient-shadow border-l-4 border-primary">
 <div class="absolute -left-[49px] top-4 w-4 h-4 rounded-full bg-primary shadow-md"></div>
 <h5 class="text-sm font-semibold text-primary uppercase tracking-wider mb-1">Proses Teknis</h5>
 <p class="text-on-surface-variant">Proses dimulai dari pembuatan Use Case &amp; Activity Diagram untuk memastikan alur pendaftaran digital yang mulus tanpa hambatan birokrasi.</p>
@@ -743,26 +828,26 @@
 </div>
 </div>
 <div class="space-y-6">
-<div class="p-6 bg-[#1e293b] rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-secondary">
+<div class="p-6 bg-[#1e293b] rounded-xl card-border ambient-shadow border-l-4 border-secondary">
 <h5 class="text-sm font-semibold text-secondary uppercase tracking-wider mb-2">Fitur</h5>
 <p class="text-on-surface-variant">Kalender interaktif real-time dengan status ketersediaan, sistem pencegahan bentrok jadwal, check-in mandiri dengan pembatalan otomatis, sistem pelaporan kerusakan fasilitas, dan dashboard analisis penggunaan ruangan.</p>
 </div>
-<div class="p-6 bg-[#1e293b] rounded-xl border border-outline-variant/30 ambient-shadow border-l-4 border-primary">
+<div class="p-6 bg-[#1e293b] rounded-xl card-border ambient-shadow border-l-4 border-primary">
 <h5 class="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Teknologi</h5>
 <p class="text-on-surface-variant">Dibangun dengan Laravel (PHP) untuk backend yang tangguh, FullCalendar.js untuk antarmuka jadwal interaktif, dan Tailwind CSS untuk tampilan yang modern, responsif, dan ramah pengguna.</p>
 </div>
 </div>
 </div>
 <div class="flex gap-3">
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Laravel</span>
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">PHP</span>
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">MySQL</span>
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">FullCalendar.js</span>
-<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Tailwind CSS</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">Laravel</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">PHP</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">MySQL</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">FullCalendar.js</span>
+<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">Tailwind CSS</span>
 </div>
 </div>
 <div class="lg:col-span-7 order-1 lg:order-2 group">
-<div class="relative overflow-hidden rounded-2xl bg-[#1e293b] border border-outline-variant/30 ambient-shadow aspect-video flex items-center justify-center p-6">
+<div class="relative overflow-hidden rounded-2xl bg-[#1e293b] card-border ambient-shadow aspect-video flex items-center justify-center p-6">
 <img class="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-1000" alt="SPOTBOOK.id platform" src="Cuplikan layar 2026-07-20 131850.png"/>
 <div class="absolute top-4 right-4 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-semibold border border-secondary/20">
                         Web App
@@ -815,7 +900,7 @@
 </div>
 </div>
 <div class="reveal" style="transition-delay: 0.2s">
-<form class="bg-[#1e293b] p-8 rounded-2xl border border-outline-variant/30 ambient-shadow space-y-6" id="contactForm">
+<form class="bg-[#1e293b] p-8 rounded-2xl card-border ambient-shadow space-y-6" id="contactForm">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
 <label class="block text-sm font-semibold text-primary mb-2" for="name">Nama</label>
@@ -899,6 +984,55 @@
 
     revealElements.forEach(el => revealObserver.observe(el));
 
+    // Starfield: generate bintang
+    (function createStars() {
+        const container = document.getElementById('starfield');
+        if (!container) return;
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2.5 + 0.5;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', (Math.random() * 4 + 2) + 's');
+            star.style.setProperty('--max-opacity', (Math.random() * 0.6 + 0.3));
+            star.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(star);
+        }
+    })();
+
+    // Rotating typing sub-heading
+    const roles = ['Software Engineer', 'Visual Designer', 'Backend Specialist'];
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
+    const rotateEl = document.getElementById('rotateText');
+
+    function typeRole() {
+        if (!rotateEl) return;
+        const current = roles[roleIndex];
+        if (isDeleting) {
+            rotateEl.textContent = current.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            rotateEl.textContent = current.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === current.length) {
+            setTimeout(() => { isDeleting = true; typeRole(); }, 2000);
+            return;
+        }
+        if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            setTimeout(typeRole, 300);
+            return;
+        }
+        setTimeout(typeRole, isDeleting ? 40 : 80);
+    }
+    setTimeout(typeRole, 1500);
+
     // Force hero animations on load
     window.addEventListener('load', () => {
         document.querySelectorAll('.hero-reveal-1, .hero-reveal-2, .hero-reveal-3, .hero-reveal-4').forEach(el => {
@@ -953,7 +1087,7 @@
         if (!p) return;
         document.getElementById('modalBody').innerHTML = `
             <div class="flex flex-wrap gap-2 mb-4">
-                ${p.tags.map(t => `<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">${t}</span>`).join('')}
+                ${p.tags.map(t => `<span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">${t}</span>`).join('')}
             </div>
             <h3 class="font-headline-md text-headline-md text-primary mb-3">${p.title}</h3>
             <p class="text-on-surface-variant mb-4">${p.desc}</p>
