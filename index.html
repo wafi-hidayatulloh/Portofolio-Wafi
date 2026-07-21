@@ -114,6 +114,8 @@
             background-color: #f8f9ff;
             color: #0d1c2d;
             scroll-behavior: smooth;
+            background-image: radial-gradient(#bec6e0 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -415,7 +417,9 @@
 </section>
 
 <!-- About Me Section -->
-<section class="py-section-gap bg-surface-container-low" id="about">
+<section class="py-section-gap bg-surface-container-low relative overflow-hidden" id="about">
+<div class="absolute top-20 right-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-10 left-0 w-48 h-48 bg-secondary/5 rounded-full blur-3xl"></div>
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="flex flex-col md:grid md:grid-cols-12 gap-8 md:gap-element-gap items-start">
 <div class="md:col-span-5 md:sticky md:top-32 w-full reveal space-y-6">
@@ -450,7 +454,9 @@
 </section>
 
 <!-- Skills & Tools Section -->
-<section class="py-section-gap" id="skills">
+<section class="py-section-gap relative overflow-hidden" id="skills">
+<div class="absolute top-10 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 right-0 w-80 h-80 bg-primary-fixed/20 rounded-full blur-3xl"></div>
 <div class="max-w-container-max mx-auto px-gutter text-center mb-16 reveal">
 <h2 class="font-headline-md text-headline-md text-primary mb-4">Kemampuan &amp; Tools</h2>
 <p class="text-on-surface-variant max-w-2xl mx-auto">Kombinasi teknis pengembangan perangkat lunak dan kepekaan desain visual.</p>
@@ -521,7 +527,8 @@
 </section>
 
 <!-- Projects Section -->
-<section class="py-section-gap" id="projects">
+<section class="py-section-gap relative overflow-hidden" id="projects">
+<div class="absolute top-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="text-center mb-16 reveal">
 <h2 class="font-headline-md text-headline-md text-primary mb-4">Proyek Pilihan &amp; Studi Kasus</h2>
@@ -636,7 +643,8 @@
 </div>
 </div>
 </section><!-- Contact Section -->
-<section class="py-section-gap" id="contact">
+<section class="py-section-gap relative overflow-hidden" id="contact">
+<div class="absolute bottom-0 right-0 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="reveal">
 <h2 class="font-headline-md text-headline-md text-primary mb-4">Hubungi Saya</h2>
@@ -702,7 +710,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-section-gap">
+<section class="py-section-gap relative overflow-hidden">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="bg-primary-container rounded-2xl p-12 md:p-20 text-center relative overflow-hidden reveal">
 <div class="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-3xl -mr-32 -mt-32"></div>
