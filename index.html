@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Muhammad Wafi | Portfolio</title>
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <!-- Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind -->
@@ -83,25 +83,25 @@
             },
             "fontFamily": {
                     "body-lg": ["Inter"],
-                    "headline-lg": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans", "Inter"],
                     "label-sm": ["Inter"],
                     "body-md": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "display": ["Inter"],
-                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans", "Inter"],
+                    "display": ["Plus Jakarta Sans", "Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans", "Inter"],
                     "label-md": ["Inter"],
                     "label-caps": ["Inter"]
             },
             "fontSize": {
                     "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
                     "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
                     "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
                     "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
                     "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
             }
@@ -132,6 +132,32 @@
             filter: blur(60px);
             opacity: 0.4;
             pointer-events: none;
+            animation: float-blob 8s ease-in-out infinite;
+        }
+        .tech-blob:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+        .tech-blob:nth-child(3) { animation-delay: -6s; animation-duration: 7s; }
+
+        @keyframes float-blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .wave-divider {
+            position: relative;
+            height: 60px;
+            overflow: hidden;
+            margin-top: -30px;
+        }
+        .wave-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 60px;
+            background: linear-gradient(135deg, transparent 33.33%, rgba(80, 95, 118, 0.04) 33.33%, rgba(80, 95, 118, 0.04) 66.66%, transparent 66.66%);
+            background-size: 60px 60px;
         }
 
         .section-accent {
@@ -343,9 +369,9 @@
             .gap-element-gap { gap: 20px; }
             .mb-16 { margin-bottom: 24px; }
             .hero-gradient { padding-top: 20px; }
-            .text-display-lg-mobile { font-size: 26px !important; line-height: 34px !important; }
-            .text-headline-lg { font-size: 20px !important; line-height: 28px !important; }
-            .text-headline-md { font-size: 17px !important; line-height: 24px !important; }
+            .text-display-lg-mobile { font-size: 28px !important; line-height: 36px !important; }
+            .text-headline-lg { font-size: 22px !important; line-height: 30px !important; }
+            .text-headline-md { font-size: 18px !important; line-height: 26px !important; }
             .text-body-lg { font-size: 14px !important; line-height: 22px !important; }
             .text-body-md { font-size: 13px !important; line-height: 20px !important; }
             .h-20 { height: 56px; }
@@ -471,6 +497,8 @@
 </div>
 </section>
 
+<div class="wave-divider"></div>
+
 <!-- About Me Section -->
 <section class="py-section-gap bg-surface-container-low relative overflow-hidden section-accent tech-grid" id="about">
 <div class="tech-blob w-96 h-96 bg-secondary/10" style="top: -10%; right: -10%;"></div>
@@ -490,17 +518,17 @@
 <div class="md:col-span-7">
 <div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
 <p class="reveal" style="transition-delay: 0.1s">
-                        Halo! Nama saya Muhammad Wafi Hidayatulloh, seorang siswa Rekayasa Perangkat Lunak (RPL) yang memiliki ketertarikan mendalam pada dunia pengembangan web dan desain grafis.
+                        Halo! Nama saya Muhammad Wafi Hidayatulloh, seorang siswa <span class="text-secondary font-semibold">Rekayasa Perangkat Lunak (RPL)</span> yang memiliki ketertarikan mendalam pada dunia <span class="text-secondary font-semibold">pengembangan web</span> dan <span class="text-secondary font-semibold">desain grafis</span>.
                     </p>
 <p class="reveal" style="transition-delay: 0.2s">
-                        Bagi saya, coding bukan hanya tentang membuat aplikasi itu berjalan, tapi juga tentang bagaimana memberikan pengalaman visual yang nyaman dan solusi yang solutif bagi pengguna.
+                        Bagi saya, coding bukan hanya tentang membuat aplikasi itu berjalan, tapi juga tentang bagaimana memberikan <span class="text-secondary font-semibold">pengalaman visual</span> yang nyaman dan <span class="text-secondary font-semibold">solusi yang solutif</span> bagi pengguna.
                     </p>
 <div class="bg-white p-8 rounded-2xl border border-outline-variant/30 ambient-shadow my-6 reveal card-shine" style="transition-delay: 0.3s">
 <p class="mb-4">
-                            Selama belajar di jurusan RPL, saya fokus mendalami pengembangan web menggunakan <strong>PHP dan Laravel</strong>, mulai dari perancangan arsitektur database (MySQL), pembuatan dokumentasi sistem (UML), hingga implementasi kode.
+                            Selama belajar di jurusan RPL, saya fokus mendalami pengembangan web menggunakan <strong class="text-secondary">PHP dan Laravel</strong>, mulai dari perancangan arsitektur database (<strong class="text-secondary">MySQL</strong>), pembuatan dokumentasi sistem (<strong class="text-secondary">UML</strong>), hingga implementasi kode.
                         </p>
 <p>
-                            Di sisi lain, saya juga mengasah kemampuan visual lewat branding, perancangan kemasan produk, dan desain infografis. Saya selalu bersemangat untuk mempelajari teknologi baru, memecahkan masalah lewat logika pemrograman, dan berkolaborasi dalam proyek-proyek kreatif.
+                            Di sisi lain, saya juga mengasah kemampuan visual lewat <span class="text-secondary font-semibold">branding</span>, perancangan <span class="text-secondary font-semibold">kemasan produk</span>, dan <span class="text-secondary font-semibold">desain infografis</span>. Saya selalu bersemangat untuk mempelajari teknologi baru, memecahkan masalah lewat logika pemrograman, dan berkolaborasi dalam proyek-proyek kreatif.
                         </p>
 </div>
 </div>
@@ -508,6 +536,8 @@
 </div>
 </div>
 </section>
+
+<div class="wave-divider"></div>
 
 <!-- Skills & Tools Section -->
 <section class="py-section-gap relative overflow-hidden section-accent tech-grid" id="skills">
@@ -582,6 +612,8 @@
 </div>
 </div>
 </section>
+
+<div class="wave-divider"></div>
 
 <!-- Projects Section -->
 <section class="py-section-gap relative overflow-hidden section-accent tech-grid" id="projects">
@@ -700,7 +732,11 @@
 </div>
 </div>
 </div>
-</section><!-- Contact Section -->
+</section>
+
+<div class="wave-divider"></div>
+
+<!-- Contact Section -->
 <section class="py-section-gap relative overflow-hidden section-accent tech-grid" id="contact">
 <div class="tech-blob w-72 h-72 bg-secondary/10" style="bottom: -5%; right: -5%;"></div>
 <div class="tech-blob w-48 h-48 bg-primary-fixed/15" style="top: 20%; left: 10%;"></div>
