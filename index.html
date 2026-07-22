@@ -554,17 +554,6 @@
             background: rgba(148, 163, 184, 0.15);
             border-color: rgba(148, 163, 184, 0.3);
         }
-
-        /* Typing rotate cursor */
-        .typing-rotate-cursor::after {
-            content: '|';
-            animation: blink 0.7s step-end infinite;
-            color: #94a3b8;
-            font-weight: 300;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden text-justify">
@@ -608,12 +597,12 @@
 
 <main class="relative">
 <!-- Hero Section -->
-<section class="min-h-screen flex items-center pt-20 relative overflow-hidden hero-gradient tech-grid">
+<section class="min-h-screen flex items-center pt-16 relative overflow-hidden hero-gradient tech-grid">
 <div class="tech-blob w-[500px] h-[500px] bg-secondary/8" style="top: -20%; left: -10%;"></div>
 <div class="tech-blob w-80 h-80 bg-primary-fixed/15" style="bottom: -10%; right: 10%;"></div>
-<div class="max-w-container-max mx-auto px-gutter w-full flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-element-gap items-center py-section-gap">
-<div class="md:col-span-12 flex flex-col items-center md:items-start mb-8 reveal hero-reveal-1">
-<div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ambient-shadow border-4 border-[#1e293b] shadow-xl mb-6">
+<div class="max-w-container-max mx-auto px-gutter w-full flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-center py-8 md:py-12">
+<div class="md:col-span-12 flex flex-col items-center md:items-start reveal hero-reveal-1">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden ambient-shadow border-4 border-[#1e293b] shadow-xl mb-3">
 <img class="w-full h-full object-cover cursor-pointer" alt="Muhammad Wafi Hidayatulloh - Software Engineer &amp; Designer" src="IMG_20260720_135813.jpg.jpeg" onclick="openImageModal(this.src)"/>
 </div>
 </div>
@@ -622,20 +611,17 @@
 <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2 reveal hero-reveal-2">
                 Hi, Saya <span class="gradient-text"><span class="typewriter-text" id="typewriterName"></span><span class="typewriter-cursor"></span></span>
 </h1>
-<p class="font-body-md text-body-md text-secondary mb-4 reveal hero-reveal-3">
-                Saya <span id="rotateText"></span><span class="typing-rotate-cursor"></span>
-</p>
+            </p>
 <p class="font-body-md text-body-md text-secondary mb-4 leading-relaxed reveal hero-reveal-3">
                 Saya bersemangat menciptakan pengalaman yang menarik, mudah diakses, dan berpusat pada pengguna.
             </p>
 <p class="font-body-md text-body-md font-medium text-on-surface mb-10 max-w-xl reveal hero-reveal-3">
                 Saya belajar Rekayasa Perangkat Lunak, menulis kode PHP/Laravel yang bersih, dan mendesain proyek visual yang keren.
             </p>
-</div>
-</div>
-<div class="md:col-span-12 flex flex-col sm:flex-row gap-4 justify-center md:justify-start reveal hero-reveal-4">
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start reveal hero-reveal-4">
 <a class="bg-primary text-on-primary px-8 py-4 rounded-full font-semibold text-center hover:bg-secondary/20 transition-all ambient-shadow active:scale-95" href="#projects">Lihat Proyek Saya</a>
 <a class="border-2 border-secondary text-secondary px-8 py-4 rounded-full font-semibold text-center hover:bg-secondary/10 transition-all active:scale-95" href="#contact">Hubungi Saya</a>
+</div>
 </div>
 </div>
 </section>
@@ -688,39 +674,37 @@
 <div class="tech-blob w-72 h-72 bg-primary-fixed/15" style="bottom: -10%; right: -5%;"></div>
 <div class="tech-blob w-40 h-40 bg-secondary/5" style="top: 50%; right: 30%;"></div>
 <div class="max-w-container-max mx-auto px-gutter text-center mb-16 reveal">
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Kemampuan &amp; Tools</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto">Kombinasi teknis pengembangan perangkat lunak dan kepekaan desain visual.</p>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Layanan Saya</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Solusi digital terpadu dari konsep hingga peluncuran.</p>
 </div>
-<div class="px-gutter grid grid-cols-1 gap-8 max-w-xl mx-auto">
+<div class="px-gutter max-w-3xl mx-auto space-y-8">
 <div class="p-8 rounded-2xl bg-[#1e293b] card-border ambient-shadow reveal" style="transition-delay: 0.1s">
-<div class="flex items-center gap-4 mb-8">
-<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center">
-<span class="material-symbols-outlined">code</span>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-400">code</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary">Development</h3>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
-<span class="material-symbols-outlined text-secondary">database</span>
-<span class="font-body-md font-semibold text-primary">PHP / Laravel</span>
-</div>
-<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
-<span class="material-symbols-outlined text-secondary">storage</span>
-<span class="font-body-md font-semibold text-primary">MySQL</span>
-</div>
-<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
-<span class="material-symbols-outlined text-secondary">html</span>
-<span class="font-body-md font-semibold text-primary">HTML / CSS</span>
-</div>
-<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
-<span class="material-symbols-outlined text-secondary">account_tree</span>
-<span class="font-body-md font-semibold text-primary">UML Diagram</span>
-</div>
-<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl hover:bg-secondary-container/20 transition-colors group">
-<span class="material-symbols-outlined text-secondary">architecture</span>
-<span class="font-body-md font-semibold text-primary">AutoCAD</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Website Development</h3>
+<p class="text-sm text-on-surface-variant">Pembuatan Website</p>
 </div>
 </div>
+<p class="text-on-surface-variant leading-relaxed">
+                Website Development (pengembangan situs web) adalah proses pembentukan, pembuatan, dan pemeliharaan sebuah website agar dapat diakses oleh pengguna melalui internet. Proses ini mencakup seluruh aspek di balik layar—mulai dari penulisan kode (coding), perancangan tata letak visual, hingga pengaturan database dan server agar website dapat berjalan dengan lancar, cepat, dan aman.
+            </p>
+</div>
+<div class="p-8 rounded-2xl bg-[#1e293b] card-border ambient-shadow reveal" style="transition-delay: 0.2s">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 bg-gradient-to-br from-purple-500/20 to-pink-600/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-400">palette</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">UI/UX Design &amp; Frontend Implementation</h3>
+<p class="text-sm text-on-surface-variant">Desain &amp; Implementasi Antarmuka</p>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                UI/UX Design &amp; Frontend Implementation adalah kombinasi dua tahap krusial dalam pembuatan website yang berfokus pada apa yang dilihat, dirasakan, dan diinteraksikan langsung oleh pengguna. Kedua elemen ini bekerja beriringan: UI/UX Design merancang konsep dan alurnya, sedangkan Frontend Implementation mengoperkannya ke dalam bentuk kode program agar benar-benar dapat diakses dan diklik di peramban (browser).
+            </p>
 </div>
 </div>
 </section>
@@ -993,36 +977,6 @@
             container.appendChild(star);
         }
     })();
-
-    // Rotating typing sub-heading
-    const roles = ['Software Engineer', 'Visual Designer', 'Backend Specialist'];
-    let roleIndex = 0, charIndex = 0, isDeleting = false;
-    const rotateEl = document.getElementById('rotateText');
-
-    function typeRole() {
-        if (!rotateEl) return;
-        const current = roles[roleIndex];
-        if (isDeleting) {
-            rotateEl.textContent = current.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            rotateEl.textContent = current.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        if (!isDeleting && charIndex === current.length) {
-            setTimeout(() => { isDeleting = true; typeRole(); }, 2000);
-            return;
-        }
-        if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            setTimeout(typeRole, 300);
-            return;
-        }
-        setTimeout(typeRole, isDeleting ? 40 : 80);
-    }
-    setTimeout(typeRole, 1500);
 
     // Force hero animations on load
     window.addEventListener('load', () => {
