@@ -93,13 +93,14 @@
             },
             "fontSize": {
                     "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
-                    "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                                        "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
                     "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
                     "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
-                    "headline-md": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                    "display": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
-                    "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
-                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["42px", {"lineHeight": "50px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
                     "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
                     "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
                     "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
@@ -141,23 +142,6 @@
             25% { transform: translate(40px, -40px) scale(1.08); }
             50% { transform: translate(-30px, 20px) scale(0.92); }
             75% { transform: translate(20px, -30px) scale(1.04); }
-        }
-
-        .wave-divider {
-            position: relative;
-            height: 60px;
-            overflow: hidden;
-            margin-top: -30px;
-        }
-        .wave-divider::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            height: 60px;
-            background: linear-gradient(135deg, transparent 33.33%, rgba(148, 163, 184, 0.05) 33.33%, rgba(148, 163, 184, 0.05) 66.66%, transparent 66.66%);
-            background-size: 60px 60px;
         }
 
         .section-accent {
@@ -375,7 +359,7 @@
             visibility: visible;
         }
         .modal-content {
-            background: white;
+            background: #1e293b;
             border-radius: 1rem;
             padding: 2rem;
             max-width: 600px;
@@ -384,6 +368,7 @@
             overflow-y: auto;
             transform: scale(0.9) translateY(20px);
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .modal-overlay.open .modal-content {
             transform: scale(1) translateY(0);
@@ -393,27 +378,64 @@
             top: 1rem;
             right: 1rem;
             cursor: pointer;
-            color: #45464d;
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+        .modal-close:hover {
+            color: #ffffff;
+        }
+
+        /* Image lightbox */
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 300;
+            background: rgba(2, 6, 23, 0.92);
+            backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            cursor: zoom-out;
+            padding: 2rem;
+        }
+        .image-modal.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .image-modal img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .image-modal.open img {
+            transform: scale(1);
         }
 
         /* Mobile responsive */
         @media (max-width: 768px) {
-            .py-section-gap { padding-top: 48px; padding-bottom: 48px; }
+            .py-section-gap { padding-top: 40px; padding-bottom: 40px; }
             .px-gutter { padding-left: 14px; padding-right: 14px; }
             .gap-element-gap { gap: 20px; }
-            .mb-16 { margin-bottom: 24px; }
+            .mb-16 { margin-bottom: 20px; }
             .hero-gradient { padding-top: 20px; }
-            .text-display-lg-mobile { font-size: 30px !important; line-height: 38px !important; }
-            .text-headline-lg { font-size: 22px !important; line-height: 30px !important; }
-            .text-headline-md { font-size: 18px !important; line-height: 26px !important; }
-            .text-display-lg { font-size: 36px !important; line-height: 44px !important; }
+            .text-display-lg-mobile { font-size: 22px !important; line-height: 30px !important; }
+            .text-headline-lg { font-size: 18px !important; line-height: 26px !important; }
+            .text-headline-md { font-size: 15px !important; line-height: 22px !important; }
+            .text-display-lg { font-size: 28px !important; line-height: 36px !important; }
             .text-body-lg { font-size: 14px !important; line-height: 22px !important; }
             .text-body-md { font-size: 13px !important; line-height: 20px !important; }
             .h-20 { height: 56px; }
-            .mb-10 { margin-bottom: 20px; }
-            .mb-6 { margin-bottom: 10px; }
-            .mb-8 { margin-bottom: 14px; }
-            .p-8 { padding: 14px; }
+            .mb-10 { margin-bottom: 14px; }
+            .mb-6 { margin-bottom: 6px; }
+            .mb-8 { margin-bottom: 10px; }
+            .mb-4 { margin-bottom: 6px; }
+            .p-8 { padding: 12px; }
             .p-12, .md\:p-20 { padding: 20px; }
             .p-6 { padding: 14px; }
             .gap-12 { gap: 20px; }
@@ -570,13 +592,13 @@
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300" id="navbar">
 <div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
-<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">Muhammad Wafi</a>
+<a class="font-headline-md text-base md:text-headline-md text-primary tracking-tight" href="#">Muhammad Wafi</a>
 <div class="hidden md:flex items-center gap-10">
-<a class="font-body-md text-body-md text-secondary font-semibold cursor-pointer active:scale-95 transition-transform" href="#">Home</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#about">About</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#skills">Skills</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#projects">Projects</a>
-<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-semibold hover:bg-secondary/80 transition-all duration-300 shadow-lg active:scale-95" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+<a class="font-body-md text-sm text-secondary font-semibold cursor-pointer active:scale-95 transition-transform" href="#">Home</a>
+<a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#about">About</a>
+<a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#skills">Skills</a>
+<a class="font-body-md text-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#projects">Projects</a>
+<button class="bg-secondary text-on-secondary px-5 py-1.5 rounded-full font-semibold hover:bg-secondary/80 transition-all duration-300 shadow-lg active:scale-95 text-sm" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
 </div>
 <button class="md:hidden text-primary" id="menuToggle">
 <span class="material-symbols-outlined">menu</span>
@@ -595,13 +617,13 @@
 <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2 reveal hero-reveal-2">
                 Hi, Saya <span class="gradient-text"><span class="typewriter-text" id="typewriterName"></span><span class="typewriter-cursor"></span></span>
 </h1>
-<p class="font-headline-md text-headline-md text-secondary mb-4 reveal hero-reveal-3">
+<p class="font-body-md text-body-md text-secondary mb-4 reveal hero-reveal-3">
                 Saya <span id="rotateText"></span><span class="typing-rotate-cursor"></span>
 </p>
-<p class="font-headline-md text-headline-md text-secondary mb-4 leading-relaxed reveal hero-reveal-3">
+<p class="font-body-md text-body-md text-secondary mb-4 leading-relaxed reveal hero-reveal-3">
                 Saya bersemangat menciptakan pengalaman yang menarik, mudah diakses, dan berpusat pada pengguna.
             </p>
-<p class="font-body-lg text-body-lg font-medium text-on-surface mb-10 max-w-xl reveal hero-reveal-3">
+<p class="font-body-md text-body-md font-medium text-on-surface mb-10 max-w-xl reveal hero-reveal-3">
                 Saya belajar Rekayasa Perangkat Lunak, menulis kode PHP/Laravel yang bersih, dan mendesain proyek visual yang keren.
             </p>
 </div>
@@ -610,7 +632,7 @@
 <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl animate-pulse"></div>
 <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
 <div class="w-full h-full rounded-2xl overflow-hidden ambient-shadow border-8 border-[#1e293b]">
-<img class="w-full h-full object-cover" alt="Muhammad Wafi Hidayatulloh - Software Engineer &amp; Designer" src="IMG_20260720_135813.jpg.jpeg"/>
+<img class="w-full h-full object-cover cursor-pointer" alt="Muhammad Wafi Hidayatulloh - Software Engineer &amp; Designer" src="IMG_20260720_135813.jpg.jpeg" onclick="openImageModal(this.src)"/>
 </div>
 </div>
 </div>
@@ -621,7 +643,7 @@
 </div>
 </section>
 
-<div class="wave-divider"></div>
+
 
 <!-- About Me Section -->
 <section class="py-section-gap bg-surface-container-low relative overflow-hidden section-accent tech-grid" id="about">
@@ -636,11 +658,11 @@
 <div class="w-24 h-1 bg-secondary rounded-full"></div>
 </div>
 <div class="w-full max-w-xs mx-auto md:w-3/4 aspect-[3/4] rounded-2xl overflow-hidden ambient-shadow border-4 border-[#1e293b] shadow-xl">
-<img class="w-full h-full object-cover" alt="Muhammad Wafi Hidayatulloh" src="about-photo.jpg"/>
+<img class="w-full h-full object-cover cursor-pointer" alt="Muhammad Wafi Hidayatulloh" src="about-photo.jpg" onclick="openImageModal(this.src)"/>
 </div>
 </div>
 <div class="md:col-span-7">
-<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<div class="space-y-6 font-body-md text-body-md text-on-surface-variant leading-relaxed">
 <p class="reveal" style="transition-delay: 0.1s">
                         Halo! Nama saya Muhammad Wafi Hidayatulloh, seorang siswa <span class="text-secondary font-semibold">Rekayasa Perangkat Lunak (RPL)</span> yang memiliki ketertarikan mendalam pada dunia <span class="text-secondary font-semibold">pengembangan web</span> dan <span class="text-secondary font-semibold">desain grafis</span>.
                     </p>
@@ -661,7 +683,7 @@
 </div>
 </section>
 
-<div class="wave-divider"></div>
+
 
 <!-- Skills & Tools Section -->
 <section class="py-section-gap relative overflow-hidden section-accent tech-grid" id="skills">
@@ -737,7 +759,7 @@
 </div>
 </section>
 
-<div class="wave-divider"></div>
+
 
 <!-- Projects Section -->
 <section class="py-section-gap relative overflow-hidden section-accent tech-grid" id="projects">
@@ -800,9 +822,9 @@
 </div>
 </div>
 </div>
-<button class="flex items-center gap-2 text-secondary font-bold hover:gap-4 transition-all group" onclick="openProject('xkul')">
+<button class="flex items-center gap-2 bg-secondary/10 text-secondary font-semibold px-5 py-2.5 rounded-full hover:bg-secondary/20 hover:gap-4 transition-all group border border-secondary/20" onclick="openProject('xkul')">
                         Lihat Dokumentasi Proyek
-                        <span class="material-symbols-outlined">arrow_forward</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </button>
 </div>
 </div>
@@ -845,6 +867,10 @@
 <span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">FullCalendar.js</span>
 <span class="px-3 py-1 tech-tag text-xs font-semibold rounded-full">Tailwind CSS</span>
 </div>
+<button class="flex items-center gap-2 bg-secondary/10 text-secondary font-semibold px-5 py-2.5 rounded-full hover:bg-secondary/20 hover:gap-4 transition-all group mt-6 border border-secondary/20" onclick="openProject('spotbook')">
+                        Lihat Dokumentasi Proyek
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
 </div>
 <div class="lg:col-span-7 order-1 lg:order-2 group">
 <div class="relative overflow-hidden rounded-2xl bg-[#1e293b] card-border ambient-shadow aspect-video flex items-center justify-center p-6">
@@ -858,7 +884,7 @@
 </div>
 </section>
 
-<div class="wave-divider"></div>
+
 
 <!-- Contact Section -->
 <section class="py-section-gap relative overflow-hidden section-accent tech-grid" id="contact">
@@ -950,6 +976,11 @@
 <button class="modal-close material-symbols-outlined" id="modalClose">close</button>
 <div id="modalBody"></div>
 </div>
+</div>
+
+<!-- Image Lightbox -->
+<div class="image-modal" id="imageModal" onclick="closeImageModal()">
+<img id="imageModalSrc" alt="Preview"/>
 </div>
 
 <!-- Footer -->
@@ -1091,9 +1122,9 @@
             </div>
             <h3 class="font-headline-md text-headline-md text-primary mb-3">${p.title}</h3>
             <p class="text-on-surface-variant mb-4">${p.desc}</p>
-            <hr class="border-outline-variant mb-4">
+            <hr class="border-outline-variant/30 mb-4">
             <p class="text-on-surface-variant leading-relaxed">${p.detail}</p>
-            <a class="inline-flex items-center gap-2 mt-6 bg-secondary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary-fixed transition-all active:scale-95" href="${p.demo}" target="_blank" rel="noopener">
+            <a class="inline-flex items-center gap-2 mt-6 bg-secondary text-on-secondary px-6 py-3 rounded-full font-semibold hover:bg-secondary/80 transition-all active:scale-95" href="${p.demo}" target="_blank" rel="noopener">
                 <span class="material-symbols-outlined">visibility</span> Lihat Demo
             </a>
         `;
@@ -1106,12 +1137,23 @@
         document.body.style.overflow = '';
     }
 
+    function openImageModal(src) {
+        document.getElementById('imageModalSrc').src = src;
+        document.getElementById('imageModal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+        document.getElementById('imageModal').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { closeModal(); closeImageModal(); }
+    });
+
     document.getElementById('modalClose').addEventListener('click', closeModal);
     document.getElementById('projectModal').addEventListener('click', function(e) {
         if (e.target === this) closeModal();
-    });
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
     });
 
     // Smooth scrolling for anchor links
