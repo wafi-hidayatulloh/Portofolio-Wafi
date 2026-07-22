@@ -554,6 +554,26 @@
             background: rgba(148, 163, 184, 0.15);
             border-color: rgba(148, 163, 184, 0.3);
         }
+
+        /* Signature writing animation */
+        .signature-float {
+            animation: sigFloat 3s ease-in-out infinite;
+        }
+        @keyframes sigFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(2deg); }
+        }
+        .signature-write {
+            mask-image: linear-gradient(90deg, #000 0%, #000 50%, transparent 50%, transparent 100%);
+            mask-size: 200% 100%;
+            -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 50%, transparent 50%, transparent 100%);
+            -webkit-mask-size: 200% 100%;
+            animation: writeReveal 2s ease-out forwards;
+        }
+        @keyframes writeReveal {
+            0% { mask-position: 100% 0; -webkit-mask-position: 100% 0; }
+            100% { mask-position: 0% 0; -webkit-mask-position: 0% 0; }
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-x-hidden text-justify">
@@ -600,22 +620,24 @@
 <section class="min-h-screen flex items-center pt-16 relative overflow-hidden hero-gradient tech-grid">
 <div class="tech-blob w-[500px] h-[500px] bg-secondary/8" style="top: -20%; left: -10%;"></div>
 <div class="tech-blob w-80 h-80 bg-primary-fixed/15" style="bottom: -10%; right: 10%;"></div>
-<div class="max-w-container-max mx-auto px-gutter w-full flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-6 items-center py-6 md:py-10">
-<div class="md:col-span-12 flex flex-col items-center md:items-start reveal hero-reveal-1">
-<div class="w-full max-w-[18rem] md:max-w-[24rem] aspect-square rounded-full overflow-hidden ambient-shadow border-4 border-[#1e293b] shadow-xl mb-4">
+<div class="max-w-container-max mx-auto px-gutter w-full flex flex-col md:grid md:grid-cols-12 gap-2 md:gap-4 items-center py-4 md:py-8">
+<div class="md:col-span-12 flex flex-col md:flex-row items-center justify-center md:justify-start gap-2 md:gap-4 reveal hero-reveal-1">
+<div class="relative flex-shrink-0">
+<div class="w-full max-w-[18rem] md:max-w-[24rem] aspect-square rounded-full overflow-hidden ambient-shadow border-4 border-[#1e293b] shadow-xl">
 <img class="w-full h-full object-cover cursor-pointer" alt="Muhammad Wafi Hidayatulloh - Software Engineer &amp; Designer" src="IMG_20260720_135813.jpg.jpeg" onclick="openImageModal(this.src)"/>
 </div>
 </div>
+<img class="w-56 md:w-[28rem] h-auto signature-float signature-write brightness-0 invert" alt="Signature" src="signature.png"/>
+</div>
 <div class="md:col-span-7 z-10">
-<span class="font-label-caps text-label-caps text-secondary mb-4 block uppercase tracking-widest reveal hero-reveal-1">Tersedia untuk Freelance</span>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2 reveal hero-reveal-2">
+<span class="font-label-caps text-label-caps text-secondary mb-2 block uppercase tracking-widest reveal hero-reveal-1">Tersedia untuk Freelance</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-1 reveal hero-reveal-2">
                 Hi, Saya <span class="gradient-text"><span class="typewriter-text" id="typewriterName"></span><span class="typewriter-cursor"></span></span>
 </h1>
-            </p>
-<p class="font-body-md text-body-md text-secondary mb-4 leading-relaxed reveal hero-reveal-3">
+<p class="font-body-md text-body-md text-secondary mb-2 leading-relaxed reveal hero-reveal-3">
                 Saya bersemangat menciptakan pengalaman yang menarik, mudah diakses, dan berpusat pada pengguna.
             </p>
-<p class="font-body-md text-body-md font-medium text-on-surface mb-10 max-w-xl reveal hero-reveal-3">
+<p class="font-body-md text-body-md font-medium text-on-surface mb-6 max-w-xl reveal hero-reveal-3">
                 Saya belajar Rekayasa Perangkat Lunak, menulis kode PHP/Laravel yang bersih, dan mendesain proyek visual yang keren.
             </p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start reveal hero-reveal-4">
